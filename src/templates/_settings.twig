@@ -1,0 +1,23 @@
+{# @var plugin \helloswish\craftsucuricacheclear\Sucuri #}
+{# @var settings \helloswish\craftsucuricacheclear\models\Settings #}
+
+{% import '_includes/forms.twig' as forms %}
+
+<h2>Sucuri API Settings</h2>
+<p>You can find your Sucuri API settings within your Sucuri control panel under Settings > API. Ideally, set these values in your Craft .env file and then reference the .env vars here.</p>
+<hr>
+
+{{ forms.autosuggestField({
+	first: true,
+	label: 'Sucuri API Key',
+	name: 'apiKey',
+	value: settings.apiKey,
+	suggestEnvVars: true
+}) }}
+
+{{ forms.autosuggestField({
+	label: 'Sucuri API Secret',
+	name: 'apiSecret',
+	value: settings.apiSecret,
+	suggestEnvVars: true
+}) }}
